@@ -1,0 +1,3 @@
+Array	TUMOR_NORMAL
+Sample1	Normal
+Sample2	Tumor

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "## The Broad Institute\n## SOFTWARE COPYRIGHT NOTICE AGREEMENT\n## This software and its documentation are copyright (2011) by the\n## Broad Institute/Massachusetts Institute of Technology. All rights are\n## reserved.\n##\n## This software is supplied without any warranty or guaranteed support\n## whatsoever. Neither the Broad Institute nor MIT can be responsible for its\n## use, misuse, or functionality.\n\ncheckNSplit <- function(sifPath, nSplit=3, outputPathForNewNSplit) {\n  # sifPath = path to sif file \n  # nSplit = number of groups to split into\n  # nTumors = integer, total number of tumors in the sif file\n\n  dat <- read.delim(sifPath, as.is=TRUE, check.names = F) \n  dat.tumor = subset(dat, TUMOR_NORMAL == 'Tumor')\n  nTumors = dim(dat.tumor)[1]\n  nSplit = as.numeric(nSplit)\n  cat(\"There are\", nTumors, 'tumors.\\n')\n  \n  nDiv = nTumors/nSplit\n  while( nDiv > 1 && nDiv < 2){\n    cat(\"Reducing n_split...\\n\")\n    nSplit = nSplit - 1\n    nDiv = nTumors/nSplit\n  }\n  cat(\"New n_split: \", nSplit, '\\n')\n  write.table(nSplit, file = outputPathForNewNSplit, quote = F, row.names = F, col.names = F)      \n  #return(nSplit)\n}\n\n\n## Rscript checkNSplit.R nTumors nSplit\nargs <- commandArgs(trailingOnly=TRUE)\n\nif (!length(args) == 4) {\n  stop(\"Malformed arguments\")\n}\n\ncheckNSplit(args[2], args[3], args[4])\n",
+    "created" : 1549783609985.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1876631183",
+    "id" : "D7409C59",
+    "lastKnownWriteTime" : 1549784373,
+    "last_content_update" : 1549784373561,
+    "path" : "~/Desktop/github_adventures.nosync/fakeEasyTangent/modules/checkNSplit.R",
+    "project_path" : "checkNSplit.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
