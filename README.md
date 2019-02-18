@@ -4,7 +4,7 @@ This repository contains the code for running the Tangent copy number inference 
 We also provide the option of Pseudo-Tangent, a modification of the Tangent pipeline that enables denoising through comparisons between tumor profiles when only a few normal samples are available.
 
 ## To run:
-1. Modify line 59 of Dockerfile to designate parameters for the run:
+**1. Modify line 59 of Dockerfile to designate parameters for the run:**
 
 _line 58:_
 ```
@@ -20,7 +20,8 @@ CMD ["/opt/data/", "/opt/result/", "**/opt/sampledata/mysif.txt**", "**/opt/samp
 * If you would like to provide a reference plane, please supply the reference plane directory path to the last argument (argument 13); Otherwise please make sure argument 10 (-x for doGenRefPlane) is "true".
 * If you would like to run PseudoTangent, use "true" for argument 12 (-z for doPseudoTangent)
 
-2. Run:
+
+**2. Run:**
 
 ```
 docker build -t tangent
