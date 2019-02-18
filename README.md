@@ -12,7 +12,7 @@ ENTRYPOINT ["bash", "-c", "./wrapper_overall.sh -m $MCRROOT -i $0 -o $1 -s $2 -d
 ```
 _line 59:_
 ```
-CMD ["/opt/data/", "/opt/result/", "<b>/opt/sampledata/mysif.txt</b>", "**/opt/sampledata/mydata.DOC_interval.avg_cvg.txt**", "run1", "exome", "0.23", "0.01", "2", "150", "**true**", "**true**", "**true**", ""]
+CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata/mydata.DOC_interval.avg_cvg.txt", "run1", "exome", "0.23", "0.01", "2", "150", "true", "true", "true", ""]
 ```
 
 * Substitute /opt/sampledata/mysif.txt with /opt/_<where your sif file sits>_ 
