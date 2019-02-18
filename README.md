@@ -18,8 +18,8 @@ CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata
 * Substitute /opt/sampledata/mysif.txt with /opt/<_path to your sif file_> 
 * Substitute /opt/sampledata/mydata.DOC_interval.avg_cvg.txt with /opt/<_path to your data file_>
 * Examples of SIF and DATA file formats are provided in ./sampledata
-* If you would like to provide a reference plane, please supply the reference plane directory path to the last argument (argument 13); Otherwise please make sure argument 10 (-x for doGenRefPlane) is "true".
-* If you would like to run PseudoTangent, use "true" for argument 12 (-z for doPseudoTangent)
+* If you would like to provide a reference plane, please supply the reference plane directory path to the last argument (argument 13); otherwise set argument 10 (-x for doGenRefPlane) to "true" (unless you wish to run Pseudo-Tangent).
+* If you would like to run Pseudo-Tangent, use "true" for argument 12 (-z for doPseudoTangent)
 
 
 **2. Run:**
