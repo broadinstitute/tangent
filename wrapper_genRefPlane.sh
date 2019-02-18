@@ -145,7 +145,7 @@ fi
 # 	${NormalCeiling}
 
 echo "MATLAB env: ${MCRROOT}"
-bash ./modules/run_generate_reference_plane.sh $MCRROOT ${InputDir} ${OutputDir} ${SeqPlatform} ${NormalCeiling}
+bash ./run_generate_reference_plane.sh $MCRROOT ${InputDir} ${OutputDir} ${SeqPlatform} ${NormalCeiling}
 
 echo "...reference plane generated."
 

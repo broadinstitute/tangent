@@ -117,7 +117,7 @@ echo "====================================================="
 ## Step 1: Generate Reference Plane ##
 if [ "${doGenRefPlane}" = true ]; then
 	echo "Step 1: Generating reference plane..."
-	bash wrapper_genRefPlane.sh \
+	bash ./modules/wrapper_genRefPlane.sh \
 	    -m ${MCRROOT} \
 	    -i ${InputDir} \
 	    -o ${OutputDir} \
@@ -137,7 +137,7 @@ echo "====================================================="
 ## Step 2: Tangent ##
 if [ "${doTangentSteps}" = true ]; then
 	echo "Step 2: Running Tangent steps..."
-	bash wrapper_tangent_exome.sh \
+	bash ./modules/wrapper_tangent_exome.sh \
 	    -i ${InputDir} \
 	    -o ${OutputDir} \
 	    -t ${Tag} \
@@ -160,7 +160,7 @@ echo "====================================================="
 ## Step 3: PseudoTangent ##
 if [ "${doPseudoTangent}" = true ]; then
 	echo "Step 3: Running PseudoTangent..."
-	bash wrapper_PseudoTangent.sh \
+	bash ./modules/wrapper_PseudoTangent.sh \
 	    -n ${Nsplit} \
 	    -a ${Alpha} \
 	    -e ${Evects} \
