@@ -50,7 +50,14 @@ while getopts :i:o:s:d:r:t:p:c:a:n:e:x:y:z:m: option; do
 		o) OutputDir=${OPTARG};;
 		s) OrigSifPath=${OPTARG};;
 		d) OrigDataPath=${OPTARG};;
-		r) RefPlanePath=${OPTARG};;
+		r) 
+			RefPlanePath=${OPTARG}
+			[ -z "${RefPlanePath}" ] && {
+				echo "Note: RefPlanePath is an empty string. Will remove RefPlanePath variable."
+				unset RefPlanePath
+			}
+			;;
+
 		t) Tag=${OPTARG};;
 		p) SeqPlatform=${OPTARG};;
 		c) NormalCeiling=${OPTARG};;
@@ -61,11 +68,44 @@ while getopts :i:o:s:d:r:t:p:c:a:n:e:x:y:z:m: option; do
 		y) doTangentSteps=${OPTARG};;
 		z) doPseudoTangent=${OPTARG};;
 		m) MCRROOT=${OPTARG};;
+
 		\?)
+			echo "InputDir=${InputDir}"
+			echo "OutputDir=${OutputDir}"
+			echo "OrigSifPath=${OrigSifPath}"
+			echo "OrigDataPath=${OrigDataPath}"
+			echo "RefPlanePath=${RefPlanePath}"
+			echo "Tag=${Tag}"
+			echo "SeqPlatform=${SeqPlatform}"
+			echo "NormalCeiling=${NormalCeiling}"
+			echo "Alpha=${Alpha}"
+			echo "Nsplit=${Nsplit}"
+			echo "Evects=${Evects}"
+			echo "doGenRefPlane=${doGenRefPlane}"
+			echo "doTangentSteps=${doTangentSteps}"
+			echo "doPseudoTangent=${doPseudoTangent}"
+			echo "MCRROOT=${MCRROOT}"
+			echo "Missing required options:"
 			echo "Unknown options:"
 			usage
 			exit;;
 		:) 
+			
+			echo "InputDir=${InputDir}"
+			echo "OutputDir=${OutputDir}"
+			echo "OrigSifPath=${OrigSifPath}"
+			echo "OrigDataPath=${OrigDataPath}"
+			echo "RefPlanePath=${RefPlanePath}"
+			echo "Tag=${Tag}"
+			echo "SeqPlatform=${SeqPlatform}"
+			echo "NormalCeiling=${NormalCeiling}"
+			echo "Alpha=${Alpha}"
+			echo "Nsplit=${Nsplit}"
+			echo "Evects=${Evects}"
+			echo "doGenRefPlane=${doGenRefPlane}"
+			echo "doTangentSteps=${doTangentSteps}"
+			echo "doPseudoTangent=${doPseudoTangent}"
+			echo "MCRROOT=${MCRROOT}"
 			echo "Missing required options:"
 			usage; 
 			exit;;
