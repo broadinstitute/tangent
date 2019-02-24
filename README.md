@@ -18,7 +18,7 @@ If you choose to download this repository instead of cloning it by using the "Do
 
 A workaround would be to download this file directly through the "Download" button on this page: https://github.com/coyin/tangent/blob/master/matlab_2010b/MCRInstaller.bin
 
-Bottom line is, please make sure your local copy of ./matlab_2010b/MCRInstaller.bin is 221MB in file size to ensure a successful run of Tangent.
+Bottom line is, please make sure your local copy of ./matlab_2010b/MCRInstaller.bin is 221MB in file size (instead of 134 bytes) to ensure a successful run of Tangent.
 
 ### 2. Prepare input files:
 The input files (./sampledata/mysif.txt and ./sampledata/mydata.DOC_interval.avg_cvg.txt) are only provided for formatting references. Tangent cannot be run on them. Please supply your own input SIF and coverage-data files according to these formats. If you are starting with a whole-exome .bam file, you can run the GATK DepthOfCoverage tool (available on https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_coverage_DepthOfCoverage.php or as available on FireCloud https://portal.firecloud.org/) to generate *.DOC_interval.avg_cvg.txt .
@@ -40,7 +40,7 @@ CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata
 * Examples of SIF and DATA file formats are provided in ./sampledata
 * If you would like to run Pseudo-Tangent, use "true" for argument 12 (-z for doPseudoTangent)
 
-**Reference Plane**
+**Note on Reference Plane:**
 * If doGenRefPlane (Step 1) is set to "true", a reference plane will be generated and can be used in Tangent (Step 2). 
 * You may also choose to provide your own reference plane for the Tangent run (Step 2), irrespective of whether doGenRefPlane is set to "true" or "false". If you would like to provide a reference plane, please supply your reference plane directory path to the last argument (argument ${13}) as "/opt/<_your reference plane directory_>". 
 * If you are not providing your own reference plane, please make sure the -r argument has a value of "None" or "none". The argument of "" will not work. Another way will be to get rid of "-r" such that your ENTRYPOINT and CMD lines (lines 58-59) look like:
