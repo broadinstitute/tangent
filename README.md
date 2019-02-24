@@ -16,8 +16,8 @@ A workaround would be to download this file directly through the "Download" butt
 
 Bottom line is, please make sure your local copy of ./matlab_2010b/MCRInstaller.bin is 221MB in file size to ensure a successful run of Tangent.
 
-&nbsp;
-&nbsp;
+
+
 **2. Modify line 59 of Dockerfile to designate parameters for the run:**
 
 _line 58:_
@@ -35,8 +35,8 @@ CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata
 * If you would like to provide a reference plane, please supply the reference plane directory path to the last argument (argument 13); otherwise set argument 10 (-x for doGenRefPlane) to "true" (unless you wish to run Pseudo-Tangent).
 * If you would like to run Pseudo-Tangent, use "true" for argument 12 (-z for doPseudoTangent)
 
-&nbsp;
-&nbsp;
+
+
 **3. Run:**
 
 ```
