@@ -1,6 +1,6 @@
 #// Pull base image.
 FROM ubuntu:14.04
-MAINTAINER Coyin Oh (coyin.oh@gmail.com)
+MAINTAINER Coyin Oh (coyinoh@broadinstitute.org)
 
 ENV TERM=vt100
 RUN \
