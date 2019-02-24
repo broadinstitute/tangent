@@ -56,7 +56,7 @@ while getopts :i:o:s:d:r:t:p:c:a:n:e:x:y:z:m: option; do
 				echo "Note: RefPlanePath is an empty string. Will remove RefPlanePath variable."
 				unset RefPlanePath
 			}
-			[ "${RefPlanePath}" = "None" ] | [ "${RefPlanePath}" = "none" ] && {
+			[ "${RefPlanePath}" = "None" ] || [ "${RefPlanePath}" = "none" ] && {
 				echo "Note: There is no RefPlanePath. Will remove RefPlanePath variable."
 				unset RefPlanePath
 			}
@@ -182,6 +182,7 @@ echo "====================================================="
 ## Step 2: Tangent ##
 if [ "${doTangentSteps}" = true ]; then
 	echo "Step 2: Running Tangent steps..."
+	echo "RefPlanePath=${RefPlanePath}"
 	bash ./modules/wrapper_tangent_exome.sh \
 	    -i ${InputDir} \
 	    -o ${OutputDir} \

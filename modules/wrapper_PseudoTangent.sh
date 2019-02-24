@@ -103,11 +103,11 @@ full_tangent () {
   # Generate reference plane & run tangent using this refplane. $1=OutputDir
   # $2=ref_PseudoTangentTag $3=tan_PseudoTangentTag $4=ref_sif $5=ref_data $6=tan_sif $7=tan_data $8=Alpha 
   echo " ||| Generating reference plane ||| "
-  bash wrapper_genRefPlane.sh -i $1 -o $1 -s $4 -d $5 -t $2 -p exome -c ${NormalCeiling} -m ${MCRROOT}
+  bash ./${scriptDir}/wrapper_genRefPlane.sh -i $1 -o $1 -s $4 -d $5 -t $2 -p exome -c ${NormalCeiling} -m ${MCRROOT}
   echo " |||---------------------------------------||| "
 
   echo " ||| Running Tangent using reference plane ||| "
-  bash wrapper_tangent_exome.sh -i $1 -o $1 -t $3 -r $1/$2/genRefPlane_output_$2/ -s $6 -d $7 -w true -p exome -c ${NormalCeiling} -g false -a $8 -z true
+  bash ./${scriptDir}/wrapper_tangent_exome.sh -i $1 -o $1 -t $3 -r $1/$2/genRefPlane_output_$2/ -s $6 -d $7 -w true -p exome -c ${NormalCeiling} -g false -a $8 -z true
 }
 
 ### perform initial run of tangent using normals in refplane
