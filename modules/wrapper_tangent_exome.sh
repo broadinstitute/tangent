@@ -203,7 +203,7 @@ if [ "$doTangent" = true ]; then
 	fi
 
 
-	bash ./run_tangent.sh $MCRROOT ${Tag} \
+	bash ./modules/run_tangent.sh $MCRROOT ${Tag} \
 		${InputFile} \
 		${SifFile} \
 		${RefPlane} \

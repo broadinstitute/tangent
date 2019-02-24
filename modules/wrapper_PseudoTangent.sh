@@ -13,7 +13,7 @@ OutputDir=./
 NormalCeiling=0.18
 MCRROOT="/opt/MATLAB/MATLAB_Compiler_Runtime/v714/"
 pwdPath="/opt/"
-scriptDir="./"
+scriptDir="./modules/"
 
 usage(){
 	echo "usage: wrapper_PseudoTangent.sh -n <Nsplit> -a <Alpha> -e <Evects> -s <OrigSifPath> -d <OrigDataPath> -t <Tag> -o <OutputDir> -c <NormalCeiling> -m <MCRROOT>"
