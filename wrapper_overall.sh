@@ -56,7 +56,7 @@ while getopts :i:o:s:d:r:t:p:c:a:n:e:x:y:z:m: option; do
 				echo "Note: RefPlanePath is an empty string. Will remove RefPlanePath variable."
 				unset RefPlanePath
 			}
-			[ "${RefPlanePath}" = "None" ] && {
+			[ "${RefPlanePath}" = "None" ] | [ "${RefPlanePath}" = "none" ] && {
 				echo "Note: There is no RefPlanePath. Will remove RefPlanePath variable."
 				unset RefPlanePath
 			}
