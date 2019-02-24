@@ -32,15 +32,23 @@ ENTRYPOINT ["bash", "-c", "./wrapper_overall.sh -m $MCRROOT -i $0 -o $1 -s $2 -d
 ```
 _line 59:_
 ```
-CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata/mydata.DOC_interval.avg_cvg.txt", "run1", "exome", "0.23", "0.01", "2", "150", "true", "true", "true", ""]
+CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata/mydata.DOC_interval.avg_cvg.txt", "run1", "exome", "0.23", "0.01", "2", "150", "true", "true", "true", "None"]
 ```
 
 * Substitute /opt/sampledata/mysif.txt with /opt/<_path to your sif file_> 
 * Substitute /opt/sampledata/mydata.DOC_interval.avg_cvg.txt with /opt/<_path to your data file_>
 * Examples of SIF and DATA file formats are provided in ./sampledata
-* If you would like to provide a reference plane, please supply the reference plane directory path to the last argument (argument 13); otherwise set argument 10 (-x for doGenRefPlane) to "true" (unless you wish to run Pseudo-Tangent).
 * If you would like to run Pseudo-Tangent, use "true" for argument 12 (-z for doPseudoTangent)
 
+**Reference Plane**
+* If doGenRefPlane (Step 1) is set to "true", a reference plane will be generated and can be used in Tangent (Step 2). 
+* You may also choose to provide your own reference plane for the Tangent run (Step 2), irrespective of whether doGenRefPlane is set to "true" or "false". If you would like to provide a reference plane, please supply your reference plane directory path to the last argument (argument ${13}) as "/opt/<_your reference plane directory_>". 
+* If you are not providing your own reference plane, please make sure the -r argument has a value of "None" or "none". The argument of "" will not work. Another way will be to get rid of "-r" such that your ENTRYPOINT and CMD lines (lines 58-59) look like:
+```
+ENTRYPOINT ["bash", "-c", "./wrapper_overall.sh -m $MCRROOT -i $0 -o $1 -s $2 -d $3 -t $4 -p $5 -c $6 -a $7 -n $8 -e $9 -x ${10} -y ${11} -z ${12}"]
+
+CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata/mydata.DOC_interval.avg_cvg.txt", "run1", "exome", "0.23", "0.01", "2", "150", "true", "true", "true"]
+```
 
 
 ### 4. Run:
