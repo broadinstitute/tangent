@@ -4,7 +4,7 @@ This repository contains the code for running the Tangent copy number inference 
 We also provide the option of Pseudo-Tangent, a modification of the Tangent pipeline that enables denoising through comparisons between tumor profiles when only a few normal samples are available.
 
 ## To run:
-**1. Clone/Download this repository to your local drive:**
+### 1. Clone/Download this repository to your local drive:
 
 If you are new to GitHub, please check out these articles on how to clone a Github repository: 
 * https://help.github.com/en/articles/cloning-a-repository
@@ -18,7 +18,7 @@ Bottom line is, please make sure your local copy of ./matlab_2010b/MCRInstaller.
 
 
 
-**2. Modify line 59 of Dockerfile to designate parameters for the run:**
+### 2. Modify line 59 of Dockerfile to designate parameters for the run:
 
 _line 58:_
 ```
@@ -37,7 +37,7 @@ CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata
 
 
 
-**3. Run:**
+### 3. Run:
 
 ```
 docker build -t tangent
