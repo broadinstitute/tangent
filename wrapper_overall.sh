@@ -56,6 +56,10 @@ while getopts :i:o:s:d:r:t:p:c:a:n:e:x:y:z:m: option; do
 				echo "Note: RefPlanePath is an empty string. Will remove RefPlanePath variable."
 				unset RefPlanePath
 			}
+			[ "${RefPlanePath}" = "None" ] && {
+				echo "Note: There is no RefPlanePath. Will remove RefPlanePath variable."
+				unset RefPlanePath
+			}
 			;;
 
 		t) Tag=${OPTARG};;
@@ -115,13 +119,6 @@ while getopts :i:o:s:d:r:t:p:c:a:n:e:x:y:z:m: option; do
 	esac
 done
 
-# check for required arguments
-if [ ! "${InputDir}" ] || [ ! "${OutputDir}" ] || [ ! "${OrigSifPath}" ] || [ ! "${OrigDataPath}" ] || [ ! "${Tag}" ] ; then
-	echo "Key arguments (InputDir, OutputDir, OrigSifPath, OrigDataPath, Tag) not present. Exiting..."
-	usage
-	exit 1
-fi
-
 echo "InputDir=${InputDir}"
 echo "OutputDir=${OutputDir}"
 echo "OrigSifPath=${OrigSifPath}"
@@ -137,6 +134,14 @@ echo "doGenRefPlane=${doGenRefPlane}"
 echo "doTangentSteps=${doTangentSteps}"
 echo "doPseudoTangent=${doPseudoTangent}"
 echo "MCRROOT=${MCRROOT}"
+
+
+# check for required arguments
+if [ ! "${InputDir}" ] || [ ! "${OutputDir}" ] || [ ! "${OrigSifPath}" ] || [ ! "${OrigDataPath}" ] || [ ! "${Tag}" ] ; then
+	echo "Key arguments (InputDir, OutputDir, OrigSifPath, OrigDataPath, Tag) not present. Exiting..."
+	usage
+	exit 1
+fi
 
 if [[ "${doGenRefPlane}" = false && "${doTangentSteps}" = true ]]; then
 	if [ ! "${RefPlanePath}" ] ; then
