@@ -54,7 +54,7 @@ CMD ["/opt/data/", "/opt/result/", "/opt/sampledata/mysif.txt", "/opt/sampledata
 ### 4. Run:
 
 ```
-docker build -t tangent
+docker build -t tangent .
 docker rm tangentcont
 docker run --name tangentcont -t tangent
 docker ps
