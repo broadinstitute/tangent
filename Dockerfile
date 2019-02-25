@@ -46,7 +46,7 @@ RUN echo `date`
 RUN echo `pwd`
 
 WORKDIR /opt
-#RUN chmod 0777 /opt/matlab_2010b/MCRInstaller.bin
+RUN chmod 0777 /opt/matlab_2010b/MCRInstaller.bin
 RUN ./matlab_2010b/MCRInstaller.bin -silent
 
 ENV MCRROOT=/opt/MATLAB/MATLAB_Compiler_Runtime/v714/
