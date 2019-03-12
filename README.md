@@ -64,7 +64,7 @@ ls ./tangent_output
 ```
 
 ## Troubleshooting
-### Killed job
+### #1. Killed job
 We have found that sometimes if you are running Tangent on a sample size that is too big, you may run into memory issues with Docker. The error you get might look something like this:
 ```
 Step 1: Preliminary preparation of single array list
