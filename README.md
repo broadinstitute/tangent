@@ -74,8 +74,8 @@ Step 2: Run all plates through early_gistic_prep.m
 
 ./modules/run_generate_reference_plane.sh: line 36:    32 Killed                  
 ```
-Solution: You may manually override the default resource allocation from Docker and increase the CPUs or Memory that you would like Docker to use. This issue and its potential solutions are also described here: https://stackoverflow.com/questions/44417159/docker-process-killed-with-cryptic-killed-message 
-Docker >> Preferences >> Advanced
+Solution: You may manually override the default resource allocation from Docker and increase the CPUs or Memory that you would like Docker to use. (Docker >> Preferences >> Advanced) This issue and its potential solutions are also described here: https://stackoverflow.com/questions/44417159/docker-process-killed-with-cryptic-killed-message 
+
 
 
 ## Feedback / Suggestions? 
