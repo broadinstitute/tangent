@@ -63,6 +63,20 @@ docker cp tangentcont:/opt/result ./tangent_output
 ls ./tangent_output
 ```
 
+## Troubleshooting
+### Killed job
+We have found that sometimes if you are running Tangent on a sample size that is too big, you may run into memory issues with Docker. The error you get might look something like this:
+```
+Step 1: Preliminary preparation of single array list
+...end of Step 1.
+Step 2: Run all plates through early_gistic_prep.m
+
+
+./modules/run_generate_reference_plane.sh: line 36:    32 Killed                  
+```
+Solution: You may manually override the default resource allocation from Docker and increase the CPUs or Memory that you would like Docker to use. This issue and its potential solutions are also described here: https://stackoverflow.com/questions/44417159/docker-process-killed-with-cryptic-killed-message 
+Docker >> Preferences >> Advanced
+
 
 ## Feedback / Suggestions? 
 We welcome any contributions you may have. Please direct any questions or feedback to coyinoh [at] broadinstitute [dot] org.
