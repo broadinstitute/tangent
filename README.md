@@ -6,7 +6,8 @@ We also provide the option of Pseudo-Tangent, a modification of the Tangent pipe
 
 ## To run:
 ### System requirements:
-There are no particular system requirements since Tangent is run in a Docker container that should contain all of the relevant requirements and packages.
+* Docker Desktop: https://www.docker.com/products/docker-desktop
+Since Tangent is built to run within a Docker container, the container should contain all other relevant requirements and packages.
 
 ### 1. Clone/Download this repository to your local drive:
 
