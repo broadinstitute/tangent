@@ -79,6 +79,19 @@ Step 2: Run all plates through early_gistic_prep.m
 Solution: You may manually override the default resource allocation from Docker and increase the CPUs or Memory that you would like Docker to use. (Docker >> Preferences >> Advanced) This issue and its potential solutions are also described here: https://stackoverflow.com/questions/44417159/docker-process-killed-with-cryptic-killed-message 
 
 
+### #2. MCRInstaller.bin version not found
+You may run into the following error if your local copy of ./matlab_2010b/MCRInstaller.bin is 134bytes instead of 221MB in file size:
+```
+> docker build -t tangent .
+...
+./matlab_2010b/MCRInstaller.bin: 1: ./matlab_2010b/MCRInstaller.bin: version: not found
+./matlab_2010b/MCRInstaller.bin: 2: ./matlab_2010b/MCRInstaller.bin: oid: not found
+size: '231966720': No such file             
+...
+```
+Reason: The file ./matlab_2010b/MCRInstaller.bin was not downloaded completely with "Download ZIP" because this file is currently hosted on Git LFS instead of GitHub. 
+
+Solution: Please re-read Step 1 of this guide or download this file directly through the "Download" button on this page: https://github.com/coyin/tangent/blob/master/matlab_2010b/MCRInstaller.bin
 
 ## Feedback / Suggestions? 
 We welcome any contributions you may have. Please direct any questions or feedback to coyinoh [at] broadinstitute [dot] org.
