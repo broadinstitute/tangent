@@ -18,12 +18,12 @@ If you are new to GitHub, please check out these articles on how to clone a Gith
 
 If you choose to download this repository instead of cloning it by using the "Download ZIP" button, please note that the file ./matlab_2010b/MCRInstaller.bin will not be downloaded completely in the ZIP file. The MCRInstaller.bin file is currently hosted on Git LFS instead of GitHub because of its large file size. This seems to be a known issue with files hosted on Git LFS (https://github.com/git-lfs/git-lfs/issues/903). 
 
-A workaround would be to download this file directly through the "Download" button on this page: https://github.com/coyin/tangent/blob/master/matlab_2010b/MCRInstaller.bin
+A workaround would be to download this file directly through the "Download" button on this page: https://github.com/broadinstitute/tangent/blob/master/matlab_2010b/MCRInstaller.bin
 
 Bottom line is, please make sure your local copy of ./matlab_2010b/MCRInstaller.bin is 221MB in file size (instead of 134 bytes) to ensure a successful run of Tangent.
 
 ### 2. Prepare input files:
-The input files (./sampledata/mysif.txt and ./sampledata/mydata.DOC_interval.avg_cvg.txt) are only provided for formatting references. __TANGENT CANNOT BE RUN ON THESE SAMPLE FILES.__ Please supply your own input SIF and coverage-data files according to these formats. If you are starting with a whole-exome .bam file, you can run the GATK DepthOfCoverage tool (available on https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_coverage_DepthOfCoverage.php or as available on FireCloud https://portal.firecloud.org/) to generate *.DOC_interval.avg_cvg.txt .
+The input files (*./sampledata/mysif.txt* and *./sampledata/mydata.DOC_interval.avg_cvg.txt*) are only provided for formatting references. __TANGENT CANNOT BE RUN ON THESE SAMPLE FILES.__ Please supply your own input SIF and coverage-data files according to these formats. If you are starting with a whole-exome .bam file, you can run the GATK DepthOfCoverage tool (available on https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_coverage_DepthOfCoverage.php or as available on FireCloud https://portal.firecloud.org/) to generate *.DOC_interval.avg_cvg.txt .
 
 
 ### 3. Modify line 59 of Dockerfile to designate parameters for the run:
@@ -76,7 +76,7 @@ Step 2: Run all plates through early_gistic_prep.m
 
 ./modules/run_generate_reference_plane.sh: line 36:    32 Killed                  
 ```
-Solution: You may manually override the default resource allocation from Docker and increase the CPUs or Memory that you would like Docker to use. (Docker >> Preferences >> Advanced) This issue and its potential solutions are also described here: https://stackoverflow.com/questions/44417159/docker-process-killed-with-cryptic-killed-message 
+Solution: You may manually override the default resource allocation from Docker and increase the CPUs or Memory that you would like Docker to use. (*Docker >> Preferences >> Advanced*) This issue and its potential solutions are also described here: https://stackoverflow.com/questions/44417159/docker-process-killed-with-cryptic-killed-message 
 
 
 ### #2. MCRInstaller.bin version not found
@@ -91,7 +91,7 @@ size: '231966720': No such file
 ```
 Reason: The file ./matlab_2010b/MCRInstaller.bin was not downloaded completely with "Download ZIP" because this file is currently hosted on Git LFS instead of GitHub. 
 
-Solution: Please re-read Step 1 of this guide or download this file directly through the "Download" button on this page: https://github.com/coyin/tangent/blob/master/matlab_2010b/MCRInstaller.bin
+Solution: Please re-read Step 1 of this guide or download this file directly through the "Download" button on this page: https://github.com/broadinstitute/tangent/blob/master/matlab_2010b/MCRInstaller.bin
 
 
 ### #3. Error: Matrix dimensions must agree.
@@ -103,7 +103,7 @@ As you run Tangent, you may run into the following MATLAB error:
 Matrix dimensions must agree.          
 ...
 ```
-Reason: While there are many potential reasons for "Matrix dimensions must agree", the most common reason is from using our provided sample input files (./sampledata/mysif.txt and ./sampledata/mydata.DOC_interval.avg_cvg.txt). These files are provided so you could reference the file formats. However, the paucity of data in these files will cause Tangent to fail. Unfortunately, we do not currently provide a true sample BAM/coverage file.
+Reason: While there are many potential reasons for "Matrix dimensions must agree", the most common reason is from using our provided sample input files (*./sampledata/mysif.txt* and *./sampledata/mydata.DOC_interval.avg_cvg.txt*). These files are provided so you could reference the file formats. However, the paucity of data in these files will cause Tangent to fail. Unfortunately, we do not currently provide a true sample BAM/coverage file.
 
 Solution: Please re-read Step 2 of this guide and supply your own SIF and coverage files. You can convert a .bam file to the coverage file using the GATK DepthOfCoverage tool (available on https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_coverage_DepthOfCoverage.php or as available on FireCloud https://portal.firecloud.org/).
 
