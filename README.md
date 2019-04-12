@@ -23,7 +23,7 @@ A workaround would be to download this file directly through the "Download" butt
 Bottom line is, please make sure your local copy of ./matlab_2010b/MCRInstaller.bin is 221MB in file size (instead of 134 bytes) to ensure a successful run of Tangent.
 
 ### 2. Prepare input files:
-The input files (*./sampledata/mysif.txt* and *./sampledata/mydata.DOC_interval.avg_cvg.txt*) are only provided for formatting references. __TANGENT CANNOT BE RUN ON THESE SAMPLE FILES.__ Please supply your own input SIF and coverage-data files according to these formats. If you are starting with a whole-exome .bam file, you can run the GATK DepthOfCoverage tool (available on https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_coverage_DepthOfCoverage.php or as available on FireCloud https://portal.firecloud.org/) to generate *.DOC_interval.avg_cvg.txt .
+The input files (*./sampledata/mysif.txt* and *./sampledata/mydata.DOC_interval.avg_cvg.txt*) are only provided for formatting references. __**Tangent cannot be run on these sample files.**__ Please supply your own input SIF and coverage-data files according to these formats. If you are starting with a whole-exome .bam file, you can run the GATK DepthOfCoverage tool (available on https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_coverage_DepthOfCoverage.php or as available on FireCloud https://portal.firecloud.org/) to generate *.DOC_interval.avg_cvg.txt .
 
 
 ### 3. Modify line 59 of Dockerfile to designate parameters for the run:
